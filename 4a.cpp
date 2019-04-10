@@ -1,18 +1,34 @@
-#include <iostream>
-#include <conio.h>
-using namespace std;
+#include<stdio.h>
+#include<stdlib.h>
+#include <time.h>
 
-int main (){
-	int cari;
-    int data [1000];
-	int flag = 0;
-	cout<<"masukkan data yang ingin dicari = ";
-	cin>>cari;
-	for (int i=0; i<1000; i++)
-	{
-		if (data [i] == cari) flag=1;
-		break;
+int main(){
+	int data[100],cari,jmlh=0;
+	bool bol=false;
+    srand(time(0));
+
+	for(int i=0;i<100;i++){
+
+        data[i]=rand()%100+1;
+
 	}
-	if (flag ==1) cout<<"data ada!\n";
-		else cout<<"data tidak ada!\n";
+
+	printf("masukkan data yang di cari : ");
+	scanf("%d",&cari);
+
+	for(int i=0;i<100;i++){
+        if(data[i]==cari){
+            bol=true;
+            jmlh++;
+        }
+	}
+
+	if(bol==true){
+            printf("data ada \n");
+        }else{
+            printf("Data Tidak ada\n");
+        }
+    printf("jumlah data anda : %d",jmlh);
+
+
 }

@@ -1,34 +1,22 @@
 #include<stdio.h>
-#include<stdlib.h>
-#include <time.h>
+#include<conio.h>
 
 int main(){
-	int data[100],cari,jmlh=0;
+	float data[1000]={8,10,6,2,11,7,1,100};
+	int cari,jmlh=0;
 	bool bol=false;
-    srand(time(0));
-
-	for(int i=0;i<100;i++){
-
-        data[i]=rand()%100+1;
-
-	}
 
 	printf("masukkan data yang di cari : ");
 	scanf("%d",&cari);
 
-	for(int i=0;i<100;i++){
+	for(int i=0;i<1000;i++){
         if(data[i]==cari){
-            bol=true;
-            jmlh++;
-        }
-	}
-
-	if(bol==true){
             printf("data ada \n");
+            break;
         }else{
             printf("Data Tidak ada\n");
+            break;
         }
-    printf("jumlah data anda : %d",jmlh);
-
+	}
 
 }
